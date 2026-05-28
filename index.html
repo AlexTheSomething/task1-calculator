@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lead Predictor — Calculator (Task 1)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>Lead Predictor — Calculator</h1>
+        <p class="muted">Task 1: recreate calculator UI and implement formulas</p>
+      </header>
+
+      <section class="layout">
+        <aside class="panel inputs">
+          <label>Target Revenue
+            <input id="revenue" type="number" min="0" value="10000" />
+          </label>
+
+          <label>Average Order Value
+            <input id="avgOrder" type="number" min="1" value="1000" />
+          </label>
+
+          <label>Lead Response Rate (%)
+            <input id="leadRate" type="range" min="1" max="100" value="20" />
+            <output id="leadRateOut">20%</output>
+          </label>
+
+          <label>Prospect Response Rate (%)
+            <input id="prospectRate" type="range" min="1" max="100" value="40" />
+            <output id="prospectRateOut">40%</output>
+          </label>
+
+          <div class="buttons">
+            <button id="calcBtn">Calculate</button>
+            <button id="resetBtn" class="ghost">Reset</button>
+          </div>
+
+          <section class="notes">
+            <h3>Formulas</h3>
+            <ol>
+              <li>Customers = Revenue / Avg order value</li>
+              <li>Leads = Customers * 100 / Lead Response Rate</li>
+              <li>Prospects = Leads * 100 / Prospect Response Rate</li>
+            </ol>
+          </section>
+        </aside>
+
+        <section class="panel results">
+          <div class="result-card">
+            <h4>Prospects</h4>
+            <div id="prospects" class="big">125</div>
+            <div class="muted small">Contacts required</div>
+          </div>
+
+          <div class="result-card">
+            <h4>Leads</h4>
+            <div id="leads" class="big">25</div>
+            <div class="muted small">Potential clients</div>
+          </div>
+
+          <div class="result-card">
+            <h4>Customers</h4>
+            <div id="customers" class="big">10</div>
+            <div class="muted small">Closed customers</div>
+          </div>
+
+          <div class="legend">
+            <label>Sample visualization (not exact)</label>
+            <div class="bar">
+              <div id="barCust" class="bar-fill" style="width:10%"></div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="footer">Open index.html to view locally. See README for GitHub & Netlify steps.</footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
